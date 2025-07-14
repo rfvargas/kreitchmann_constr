@@ -1,0 +1,378 @@
+* { /* Reseta estilos padrão de todos os elementos */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    border: 0; /* Remove default border */
+    outline: 0; /* Remove default outline... linha ao redor do elemento, fora da borda */
+    box-sizing: border-box; /* Garante que o box-sizing seja aplicado a todos os elementos */
+    /*font-family: cormorant-garamond, Roboto, Open Sans, Montserrat, Raleway; /* Comentado para evitar conflito com :root */
+}
+
+*, ::after, ::before { /* Garante que o box-sizing seja aplicado a todos os elementos e pseudo-elementos */
+    box-sizing: border-box; /* Garante que o box-sizing seja aplicado a todos os elementos e pseudo-elementos */
+}
+
+:root { /* Variáveis CSS para cores e fontes */
+    --cor-principal: #495e4f ; /* Cor principal do site */
+    --cor-secundaria: #ffffff; /* Cor secundária do site */
+    --cor-terceira-clara: #8b9694; /* Terceira cor clara do site */
+    --cor-terceira-escura: #1f2122; /* Terceira cor escura do site */
+    --cor-destaque: #ff9900; /* Cor de destaque do site */
+    /* 
+      A fonte padrão pode ser uma lista de fontes, onde a primeira disponível no sistema será usada.
+      Exemplo: cormorant-garamond, Roboto, Open Sans, Montserrat, Raleway.
+      Se preferir usar apenas uma fonte específica, remova as outras da lista.
+    */
+    --fonte-logo: cormorant-garamond; /* Fonte padrão do logo */
+    --fonte-padrao: Roboto; /* Fonte padrão do site */
+    --fonte-principal: Raleway; /* Fonte principal do site */
+    --fonte-secundaria: open-sans /* Fonte secundária do site */
+    --fonte-close: Raleway; /* Fonte para o botão de fechar */
+    --espacamento: 1rem; /* Espaçamento padrão */
+}
+
+body { /* Define o tamanho base da fonte e a altura do body */
+    /* font-family: var(--fonte-padrao); /* Usa a fonte padrão definida em :root */
+    color: var(--cor-secundaria); /* Cor do texto */
+    min-width: 300px; /* Define uma largura mínima para o body */
+    min-height: 100%;
+    background-color: var(--cor-principal); /* Cor de fundo do body */
+    overflow: hidden; /* Garante que nada saia do container */
+    overflow-y: auto;
+    position: relative;
+}
+
+html, body { /* Define o tamanho base da fonte e a altura do body */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Garante que o box-sizing seja aplicado a todos os elementos e pseudo-elementos */
+}
+
+.h1_zero { /* Classe para zerar o tamanho da fonte */
+    font-size: 0; /* Zera o tamanho da fonte para evitar espaçamento indesejado */
+    margin: 0; /* Remove margem para evitar espaçamento indesejado */
+    padding: 0; /* Remove padding para evitar espaçamento indesejado */
+}
+
+.sect_uni {
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-size: cover; /* A imagem cobre toda a àrea... pode cortar partes da imagem */
+    background-position: center; /* Centraliza a imagem */
+    min-height: 100vh; /* Ocupa toda a altura da viewport */
+    box-sizing: border-box; /* Garante cálculo correto da largura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* overflow: hidden; */
+}
+
+.container { /* div principal do site */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    max-width: 1450px; /* Limita a largura máxima do conteúdo */
+    min-height: 95%; /* Ocupa a maior parte da altura visível */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Logo no canto esquerdo */
+    padding-bottom: 20px;
+}
+
+.div_lg img {
+    max-width: 310px;
+    height: auto;
+}
+
+main {
+    flex-grow: 1; /* Faz o conteúdo principal ocupar o espaço restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.p-breve {
+    font-family: var(--fonte-secundaria);
+    font-size: 3em; /* Grande e chamativo */
+    font-weight: 700;
+    /* color: #E8F5E9; /* Verde bem claro, quase branco, para destaque */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Leve brilho */
+    margin: 10px 0;
+    position: relative;
+    background-image: linear-gradient(180deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%); /* Linear gradient: angle, color stops */;
+    -webkit-background-clip: text; /* Recorta o fundo ao texto (compatível com navegadores WebKit) */
+    background-clip: text; /* Recorta o fundo ao texto */
+    color: transparent; /* Torna a cor do texto transparente */
+    -webkit-text-fill-color: transparent; /* Compatível com navegadores WebKit */
+}
+
+/* Animação de pulsação para o "Em Breve..." */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.p-breve {
+    animation: pulse 2s infinite ease-in-out; /* Aplica a animação */
+}
+
+.p-melhores {
+    font-family: var(--fonte-principal);
+    font-size: 3.5em; /* Tamanho maior para a frase principal */
+    font-weight: 700;
+    margin-bottom: 50px;
+    line-height: 1;
+    text-shadow: 3px 3px 7px var(--cor-terceira-escura); /* Sombra do texto do título */
+}
+
+.p-descricao {
+    font-family: var(--fonte-padrao);
+    font-size: 1.3em;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.p-agenda {
+    font-family: var(--fonte-principal);
+    font-size: 1.5em; /* Grande e chamativo */
+    font-weight: 500;
+    margin-top: 50px;
+    text-shadow: 0 0 7px var(--cor-terceira-escura); /* Sombra do texto do título */
+    /* margin-bottom: 20px; */
+}
+
+.p-agenda i {
+    margin-left: 10px;
+    font-size: 1.1em;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Alinha o conteúdo inferior */
+    width: 100%;
+    padding-top: 5px;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+    position: relative;
+}
+
+.contact_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    white-space: nowrap;
+    text-shadow: 0 0 4px var(--cor-terceira-escura); /* Sombra do texto do título */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.contact-item i {
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+.contact-item a, .contact-item a:hover {
+  text-decoration: none; /* Remove o sublinhado */
+  color: inherit; /* Herda a cor do elemento pai */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse sobre links */
+}
+
+#btn_tel a {
+    color: #FFFFFF;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#btn_tel a:hover {
+    transform: scale(1.1); /* Efeito ao passar o mouse */
+    color: #C8E6C9; /* Verde claro no hover */
+    opacity: 0.4;
+    text-shadow: none;
+}
+
+a[href^="mailto:"] {
+  /* color: blue; */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a[href^="mailto:"]:hover {
+  text-decoration: underline;
+  /* color: darkblue; */
+}
+
+span {
+    font-family: var(--fonte-padrao);
+}
+
+.social_icons {
+    display: flex;
+    gap: 40px; /* Espaço entre os ícones */
+}
+
+.social_icons a {
+    color: #FFFFFF;
+    font-size: 2em; /* Tamanho dos ícones */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.social_icons a:hover {
+    transform: scale(1.1); /* Efeito ao passar o mouse */
+    color: #C8E6C9; /* Verde claro no hover */
+    opacity: 0.4;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .div_lg img {
+        max-width: 250px;
+        height: auto;
+        padding-top: 10px;
+    }
+
+    .p-breve {
+        font-size: 2.5em;
+    }
+
+    .p-melhores {
+        font-size: 2.5em;
+    }
+
+    .p-descricao {
+        font-size: 1.1em;
+    }
+
+    .p-agenda {
+        font-size: 1.1em;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center; /* Centraliza os itens no rodapé */
+        gap: 30px;
+        padding-bottom: 10px;
+    }
+
+    .contact_info {
+        align-items: center; /* Centraliza informações de contato */
+    }
+
+    .social_icons {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .div_lg img {
+        max-width: 200px;
+        height: auto;
+        padding-top: 10px;
+    }
+
+    .p-breve {
+        font-size: 2em;
+    }
+
+    .p-melhores {
+        font-size: 2.2em;
+    }
+
+    .p-descricao {
+        font-size: 1.1em;
+    }
+
+    .p-agenda {
+        font-size: 1.1em;
+    }
+
+    footer {
+        padding-bottom: 10px;
+    }
+
+    .social_icons a {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 445px) {
+    .p-agenda i {
+        display: none;
+    }
+    
+}
+
+/* ######################################### */
+/* ESTE TRECHO SERVE PARA O BANNER DO COOKIE */
+/* ######################################### */
+
+#cookie-consent-banner {
+    position: fixed; /* Fixa o banner na tela */
+    bottom: 0px; /* Alinha na parte inferior */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Ocupa toda a largura */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+    color: #fff; /* Texto branco */
+    padding: 15px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 9999; /* Garante que fique acima de tudo */
+    font-family: 'Poppins', sans-serif; /* Use a mesma fonte do seu site */
+    font-size: 0.9em;
+    line-height: 1.4;
+    display: flex; /* Para centralizar o conteúdo */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Para quebrar linha em telas pequenas */
+}
+
+#cookie-consent-banner p {
+    margin: 0 20px 10px 0; /* Espaço entre o texto e o botão */
+    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço disponível */
+}
+
+#cookie-consent-banner p a {
+    color: #8BC34A; /* Cor do link (seu verde apagado) */
+    text-decoration: underline;
+}
+
+#cookie-consent-banner button {
+    background-color: #8BC34A; /* Cor do botão (seu verde apagado) */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#cookie-consent-banner button:hover {
+    background-color: #689F38; /* Um tom mais escuro no hover */
+}
+
+/* Responsividade básica para telas menores */
+@media (max-width: 768px) {
+    #cookie-consent-banner {
+        /* flex-direction: column; */
+        padding: 15px;
+    }
+    #cookie-consent-banner p {
+        margin: 0 0 15px 0;
+    }
+}
