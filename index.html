@@ -40,7 +40,7 @@
     <!-- Link para Content Security Policy (CSP) -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'" />
+      content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'" />
     <!-- ####################################################################### -->
     <!-- ####################################################################### -->
     <!-- Link X-UA-Compatible: Para navegadores mais antigos (como IE) renderizem a página no modo mais seguro e compatível -->
@@ -51,7 +51,7 @@
     <!-- Início do conteúdo da página -->
     <h1 class="h1_zero">Home - A Corretora Kreitchmann</h1>
     <!-- Título principal da página, oculto para leitores de tela -->
-    <section class="sect_uni" data-background-image="./img_fundo_pg_constru.webp" style="background-image: url('assets/img_fundo_pg_constru.webp')">
+    <section class="sect_uni" style="background-image: url('assets/img_fundo_pg_constru.webp')">
       <div class="container">
         <header>
           <div class="div_lg">
@@ -61,12 +61,12 @@
         <main>
           <p class="p-breve">Em breve...</p>
           <p class="p-melhores">
-            As melhores oportunidades<br />por aqui também.
+            As melhores oportunidades<br/>por aqui também.
           </p>
           <p class="p-descricao">
             Logo mais, você vai poder navegar por aqui para encontrar o seu imóvel ideal.
           </p>
-          <p class="p-descricao">
+          <p class="p-descricao p-vapor">
             Estou a todo vapor, cuidando de cada detalhe do meu site. Agradeço a sua paciência.
           </p>
           <div class="p-agenda">
@@ -80,7 +80,7 @@
               <a
                 href="tel:51989386583"> <!-- Link para telefone -->
                 <i class="fas fa-phone"></i>
-                <span>(51) 98938-6583</span>
+                <span class="contact-item-span" >(51) 98938-6583</span>
               </a>
             </div>
             <div class="contact-item">
