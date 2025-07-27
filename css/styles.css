@@ -4,7 +4,6 @@
     border: 0; /* Remove default border */
     outline: 0; /* Remove default outline... linha ao redor do elemento, fora da borda */
     box-sizing: border-box; /* Garante que o box-sizing seja aplicado a todos os elementos */
-    /*font-family: cormorant-garamond, Roboto, Open Sans, Montserrat, Raleway; /* Comentado para evitar conflito com :root */
 }
 
 *, ::after, ::before { /* Garante que o box-sizing seja aplicado a todos os elementos e pseudo-elementos */
@@ -30,21 +29,21 @@
     --espacamento: 1rem; /* Espaçamento padrão */
 }
 
-body { /* Define o tamanho base da fonte e a altura do body */
-    /* font-family: var(--fonte-padrao); /* Usa a fonte padrão definida em :root */
-    color: var(--cor-secundaria); /* Cor do texto */
-    min-width: 320px; /* Define uma largura mínima para o body */
-    min-height: 344px;
-    background-color: var(--cor-principal); /* Cor de fundo do body */
-    overflow: hidden; /* Garante que nada saia do container */
-    overflow-y: auto;
-    position: relative;  /* **Importante**: Remove barras de rolagem globais, se o conteúdo exceder, será tratado internamente */
-}
-
 html, body { /* Define o tamanho base da fonte e a altura do body */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
     box-sizing: border-box; /* Garante que o box-sizing seja aplicado a todos os elementos e pseudo-elementos */
+    height: 100%; /* Garante que HTML e BODY ocupem 100% da viewport */
+    min-width: 320px; /* Define uma largura mínima para o body */
+    min-height: 344px; /* Mantido, mas pode ser ajustado */
+}
+
+body { /* Define o tamanho base da fonte e a altura do body */
+    font-family: var(--fonte-padrao); /* Usa a fonte padrão definida em :root */
+    color: var(--cor-secundaria); /* Cor do texto */
+    background-color: var(--cor-principal); /* Cor de fundo do body */
+    overflow: hidden; /* Garante que nada saia do container */
+    overflow-y: auto;
 }
 
 .h1_zero { /* Classe para zerar o tamanho da fonte */
@@ -54,6 +53,7 @@ html, body { /* Define o tamanho base da fonte e a altura do body */
 }
 
 .sect_uni {
+    background-image: url('../assets/img_fundo_pg_constru.webp');
     background-repeat: no-repeat; /* Evita a repetição da imagem */
     background-size: cover; /* A imagem cobre toda a àrea... pode cortar partes da imagem */
     background-position: center; /* Centraliza a imagem */
@@ -61,8 +61,7 @@ html, body { /* Define o tamanho base da fonte e a altura do body */
     box-sizing: border-box; /* Garante cálculo correto da largura */
     display: flex;
     justify-content: center;
-    align-items: center;
-    /* position: relative; */
+    /* align-items: center; */
     /* padding-top: 1rem; /* Exemplo: Compensar altura do header fixo */
 }
 
@@ -71,27 +70,30 @@ html, body { /* Define o tamanho base da fonte e a altura do body */
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
+    width: 98%;
     max-width: 1450px; /* Limita a largura máxima do conteúdo */
-    min-height: 95%; /* Ocupa a maior parte da altura visível */
-    padding: 1rem;
+    padding: 1rem 0.8rem;
     box-sizing: border-box;
+    /* min-height: 98%; /* Ocupa a maior parte da altura visível */
 
-    /*height: calc(100vh - 1rem); /* **Importante**: Ocupa a altura restante da viewport, descontando o padding-top do body */
+    /* height: calc(100vh - 1rem); /* **Importante**: Ocupa a altura restante da viewport, descontando o padding-top do body */
 }
 
 header {
     width: 100%;
-    display: flex;
-    justify-content: flex-start; /* Logo no canto esquerdo */
-    position: relative;
-    /* padding-bottom: 1rem; */
+    /* position: sticky; */
+    top: 0; /* Gruda no topo quando a rolagem o alcança */
+    /* padding: 1vh 6vw; /* Mantido seu padding responsivo */
+    box-sizing: border-box;
+    z-index: 1000;
+    /* max-height: 10vh; /* Altura mínima do header. Essa é a altura que o padding-top do body compensa */
 }
 
 .div_lg img {
-    width: 100%;
-    max-width: 300px;
+    max-height: 8vh; /* Altura máxima da logo, responsiva */
+    max-width: 45vw; /* Largura máxima da logo, responsiva */
     height: auto;
+    width: auto;
 }
 
 main {
@@ -101,18 +103,18 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 1rem;
+    padding: 1rem 0; /* Padding interno para o main */
     box-sizing: border-box;
+    width: 100%; /* Garante que o main ocupe toda a largura do container */
 }
 
 .p-breve {
     font-family: var(--fonte-secundaria);
-    font-size: 1.5em; /* Grande e chamativo */
+    font-size: 1.8rem; /* Grande e chamativo */
     font-weight: 700;
     /* color: #E8F5E9; /* Verde bem claro, quase branco, para destaque */
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Leve brilho */
     margin: 1rem 0;
-    position: relative;
     background-image: linear-gradient(180deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%); /* Linear gradient: angle, color stops */;
     -webkit-background-clip: text; /* Recorta o fundo ao texto (compatível com navegadores WebKit) */
     background-clip: text; /* Recorta o fundo ao texto */
@@ -128,12 +130,12 @@ main {
 }
 
 .p-breve {
-    animation: pulse 2s infinite ease-in-out; /* Aplica a animação */
+    animation: pulse 1.5s infinite ease-in-out; /* Aplica a animação */
 }
 
 .p-melhores {
     font-family: var(--fonte-principal);
-    font-size: 2em; /* Tamanho maior para a frase principal */
+    font-size: 2.3rem; /* Tamanho maior para a frase principal */
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1;
@@ -142,23 +144,22 @@ main {
 
 .p-descricao {
     font-family: var(--fonte-padrao);
-    font-size: 1em;
+    font-size: 1.2rem;
     font-weight: 300;
     margin-top: 1rem;
 }
 
 .p-agenda {
     font-family: var(--fonte-principal);
-    font-size: 1em; /* Grande e chamativo */
+    font-size: 1.2rem; /* Grande e chamativo */
     font-weight: 500;
-    margin-top: 3rem;
+    margin-top: 4rem;
     text-shadow: 0 0 7px var(--cor-terceira-escura); /* Sombra do texto do título */
-    /* margin-bottom: 20px; */
 }
 
 .p-agenda i {
-    margin-left: 0.3em;
-    font-size: 1em;
+    margin-left: 0.3rem;
+    font-size: 1rem;
 }
 
 footer {
@@ -166,11 +167,12 @@ footer {
     justify-content: space-between;
     align-items: flex-end; /* Alinha o conteúdo inferior */
     width: 100%;
-    padding-top: 1rem;
+    padding: 1rem 0 1rem;
     flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
-    position: relative;
-
-    /*flex-shrink: 0;  /* Impede que o footer encolha em altura */
+    bottom: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+    /* padding: 3vh 6vw; /* Mantido seu padding responsivo */
 }
 
 .contact_info {
@@ -186,12 +188,12 @@ footer {
     align-items: center;
     margin-bottom: 0.5rem;
     font-family: var(--fonte-padrao);
-    font-size: 1em;
+    font-size: 1.2rem;
 }
 
 .contact-item i {
-    margin-right: 0.3em;
-    font-size: 1em;
+    margin-right: 0.3rem;
+    font-size: 1rem;
 }
 
 .contact-item a, .contact-item a:hover {
@@ -200,16 +202,33 @@ footer {
     cursor: pointer; /* Cursor de ponteiro ao passar o mouse sobre links */
 }
 
-#btn_tel a {
+/* Estado inicial e para links não visitados */
+#btn_tel a,
+#btn_tel a:link,
+#btn_tel a:visited {
     color: #FFFFFF;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    text-decoration: none; /* Garante que não haja sublinhado persistente */
+    outline: none; /* Remove o contorno padrão do navegador */
+    transform: scale(1.0);
+    opacity: 1;
+    display: inline-block;
 }
 
+/* Estado ao passar o mouse por cima */
 #btn_tel a:hover {
     transform: scale(1.1); /* Efeito ao passar o mouse */
     color: #C8E6C9; /* Verde claro no hover */
     opacity: 0.4;
     text-shadow: none;
+}
+
+/* Estado no momento do clique */
+#btn_tel a:active {
+    color: #545454;
+    outline: none; /* Remova o outline para não sobrepor o efeito de afundar */
+
+    transform: scale(0.95); /* Efeito de "afundar" */
 }
 
 a[href^="mailto:"] {
@@ -223,26 +242,36 @@ a[href^="mailto:"]:hover {
     /* color: darkblue; */
 }
 
-.contact-item-span {
-    font-family: var(--fonte-padrao);
-}
-
 .social_icons {
     display: flex;
-    gap: 2.5rem; /* Espaço entre os ícones */
+    gap: 1.8rem; /* Espaço entre os ícones */
     margin-top: 1rem;
 }
 
-.social_icons a {
+.social_icons a,
+.social-icons a:link,
+.social_icons a:visited {
     color: #FFFFFF;
-    font-size: 2em; /* Tamanho dos ícones */
+    font-size: 1.8rem; /* Tamanho dos ícones */
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+    opacity: 1; /* Define uma opacidade inicial explícita */
+    transform: scale(1.0); /* Define um estado inicial explícito para a transformação */
 }
 
 .social_icons a:hover {
     transform: scale(1.1); /* Efeito ao passar o mouse */
     color: #C8E6C9; /* Verde claro no hover */
     opacity: 0.4;
+    outline: none; /* Pode manter ou remover, já que o foco será perdido */
+}
+
+.social_icons a:active {
+    color: #545454;
+    outline: none; /* Remova o outline para não sobrepor o efeito de afundar */
+
+    transform: scale(0.95); /* Efeito de "afundar" */
 }
 
 
@@ -251,24 +280,15 @@ a[href^="mailto:"]:hover {
 /* ESTE TRECHO SERVE PARA RESPONSIVIDADE */
 /* ######################################### */
 
-/* Responsividade para telas com largura máxima 379px */
-@media (max-width: 422px) {
-    .p-vapor {
-        display: none;
-    }
-
+/* Responsividade para telas com largura máxima 450px */
+@media screen and (max-width: 450px) {
     .p-agenda i {
         display: none;
     }
 }
 
-
-/* Responsividade para telas com largura máxima 667px */
-@media (max-width: 667px) {
-    .div_lg img {
-        max-width: 50%;
-    }
-    
+/* Responsividade para telas com largura máxima 620px */
+@media screen and (max-width: 620px) {
     footer {
         flex-direction: column;
         align-items: center; /* Centraliza os itens no rodapé */
@@ -284,8 +304,144 @@ a[href^="mailto:"]:hover {
     }
 }
 
-/* Responsividade para telas com largura mínima 916px */
-@media (min-width: 916px) and (min-height: 710px){
+/* Responsividade para telas com largura máxima 620px e altura máxima 790px */
+@media screen and (max-width: 620px) and (max-height: 790px) {
+    .p-vapor {
+        display: none;
+    }
+
+    .p-agenda {
+        margin-top: 3rem;
+    }
+
+    .social_icons {
+        margin-top: 0.5rem;
+    }
+}
+
+/* Responsividade para telas com largura máxima 620px e altura máxima 690px */
+@media screen and (max-width: 620px) and (max-height: 690px) {
+    .p-breve {
+        margin: 0.7rem;
+        font-size: 1.5rem;
+    }
+
+    .p-melhores {
+        font-size: 2rem;
+    }
+
+    .p-descricao {
+        margin-top: 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    .p-agenda {
+        font-size: 1rem;
+    }
+
+    .contact-item {
+        font-size: 1rem;
+    }
+
+    .contact-item i {
+        font-size: 0.8rem;
+    }
+
+    #btn_tel {
+        font-size: 1rem;
+    }
+}
+
+/* Responsividade para telas com largura máxima 620px e altura máxima 555px */
+@media screen and (max-width: 620px) and (max-height: 555px) {
+    .p-breve {
+        margin: 0 0 0.4rem;
+        font-size: 0.9rem;
+    }
+
+    .p-melhores {
+        font-size: 1.1rem;
+    }
+
+    .p-descricao {
+        margin-top: 0.7rem;
+        font-size: 0.7rem;
+    }
+
+    .p-agenda {
+        font-size: 0.7rem;
+        margin-top: 0.9rem;
+    }
+
+    footer {
+        padding: 0.2rem 0 0.7rem;
+    }
+
+    .contact-item {
+        font-size: 0.7rem;
+    }
+
+    .contact-item i {
+        font-size: 0.5rem;
+    }
+
+    #btn_tel {
+        font-size: 0.7rem;
+    }
+
+    .social_icons a {
+        font-size: 1.2rem; /* Tamanho dos ícones */
+    }
+}
+
+/* Responsividade para telas com largura mínima 621px e altura mínima 620px*/
+@media screen and (min-width: 621px) and (max-height: 620px){
+    .p-breve {
+        margin: 0 0 0.3rem;
+        font-size: 1.2rem;
+    }
+
+    .p-melhores {
+        font-size: 1.6rem;
+    }
+
+    .p-descricao {
+        font-size: 0.9rem;
+        margin-top: 0.8rem;
+    }
+
+    .p-vapor {
+        display: none;
+    }
+
+    .p-agenda {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 0 0 0.7rem;
+    }
+
+    .contact-item {
+        font-size: 0.9rem;
+    }
+
+    .contact-item i {
+        font-size: 0.7rem;
+    }
+
+    #btn_tel {
+        font-size: 0.9rem;
+    }
+
+    .social_icons a {
+        font-size: 1.4rem; /* Tamanho dos ícones */
+    }
+}
+
+/* Responsividade para telas com largura mínima 900px e altura mínima 710px*/
+@media screen and (min-width: 900px) and (min-height: 710px){
     .container {
         padding: 2rem;
     }
@@ -296,11 +452,11 @@ a[href^="mailto:"]:hover {
 
     .p-breve {
         margin: 2rem;
-        font-size: 3em;
+        font-size: 3rem;
     }
 
     .p-melhores {
-        font-size: 3.5em;
+        font-size: 3.5rem;
     }
 
     .p-agenda {
@@ -308,248 +464,34 @@ a[href^="mailto:"]:hover {
     }
 
     .contact-item {
-        font-size: 1em;
+        font-size: 1.2rem;
     }
 
     .contact-item i {
-        font-size: 1em;
+        font-size: 1rem;
     }
 
     #btn_tel {
-        font-size: 1em;
+        font-size: 1.2rem;
     }
 
     .social_icons {
         gap: 3rem; /* Espaço entre os ícones */
-        margin-top: 1.5rem;
+        /* margin-top: 1.5rem; */
     }
 
     .social_icons a {
-        font-size: 2.5em; /* Tamanho dos ícones */
+        font-size: 2.5rem; /* Tamanho dos ícones */
     }
 }
 
-/* Responsividade para telas com largura máxima 667px e altura máxima 620px */
-@media (max-width: 667px) and (max-height: 620px) {
-    .container {
-        padding: 0.5rem;
-    }
-
-    .div_lg img {
-        max-width: 40%;
-    }
-
-    main {
-        padding: 0.5rem;
-    }
-
-    .p-breve {
-        margin: 0.5rem;
-    }
-
-    .p-agenda {
-        margin-top: 1.5rem;
-    }
-    
-    .p-vapor {
-        display: none;
-    }
-
-    .contact-item {
-        font-size: 0.8em;
-    }
-
-    .contact-item i {
-        font-size: 0.8em;
-    }
-
-    #btn_tel {
-        font-size: 1.2em;
-    }
-
-    .social_icons {
-        gap: 2.5rem; /* Espaço entre os ícones */
-        margin-top: 0.8rem;
-    }
-
-    .social_icons a {
-        font-size: 1.6em; /* Tamanho dos ícones */
-    }
-}
-
-/* Responsividade para telas com largura máxima 667px e altura máxima 470px */
-@media (max-width: 667px) and (max-height: 478px) {
-    main {
-        padding: 0.1rem;
-    }
-
-    .p-breve {
-        margin: 0.4rem;
-        font-size: 1em;
-    }
-
-    .p-melhores {
-        font-size: 1.5em;
-        margin-bottom: 0.7rem;
-    }
-
-    .p-descricao {
-        font-size: 0.9em;
-        margin-top: 0.5rem;
-    }
-
-    .p-agenda {
-        margin-top: 1rem;
-        font-size: 0.9em;
-    }
-
-    footer {
-        padding-top: 0.5rem;
-    }
-
-    .contact-item {
-        margin-bottom: 0.4rem;
-    }
-
-    #btn_tel {
-        font-size: 1.1em;
-    }
-
-    .social_icons {
-        margin-top: 0.3rem;
-    }
-
-    .social_icons a {
-        font-size: 1.3em; /* Tamanho dos ícones */
-    }
-}
-
-/* Responsividade para telas com largura máxima 667px e altura máxima 410px */
-@media (max-width: 667px) and (max-height: 410px) {
-    .div_lg img {
-        max-width: 37%;
-    }
-
-    .p-melhores {
-        font-size: 1.3em;
-        /* margin-bottom: 0.7rem; */
-    }
-
-    .contact-item {
-        font-size: 0.8em;
-        margin-bottom: 0.4rem;
-    }
-
-    .contact-item i {
-        font-size: 0.8em;
-    }
-
-    #btn_tel {
-        font-size: 1.1em;
-    }
-
-    .social_icons {
-        gap: 2.5rem; /* Espaço entre os ícones */
-        margin-top: 0.3rem;
-    }
-
-    .social_icons a {
-        font-size: 1.3em; /* Tamanho dos ícones */
-    }
-}
-
-/* Responsividade para telas com largura mínina 668px e altura máxima 560px */
-@media (min-width: 668px) and (max-height: 560px) {
-    .div_lg img {
-        max-width: 40%;
-    }
-
-    .p-valor {
-        display: none;
-    }
-
-    .contact-item {
-        font-size: 0.8em;
-        margin-bottom: 0.4rem;
-    }
-
-    .contact-item i {
-        font-size: 0.8em;
-    }
-
-    #btn_tel {
-        font-size: 1.1em;
-    }
-
-    .social_icons {
-        gap: 2.5rem; /* Espaço entre os ícones */
-        margin-top: 0.3rem;
-    }
-
-    .social_icons a {
-        font-size: 1.3em; /* Tamanho dos ícones */
-    }
-}
-
-/* Responsividade para telas com largura mínina 668px e altura máxima 510px */
-@media (min-width: 668px) and (max-height: 510px) {
-    .div_lg img {
-        max-width: 35%;
-    }
-
-    .contact-item {
-        margin-bottom: 0.2rem;
-    }
-}
-
-/* Responsividade para telas com largura mínina 668px e altura máxima 493px */
-@media (min-width: 668px) and (max-height: 493px) {
-    main {
-        padding: 0.1rem;
-    }
-
-    .p-breve {
-        margin: 0.3rem;
-    }
-
-    .p-melhores {
-        margin-bottom: 0.7rem;
-    }
-
-    .p-descricao {
-        margin-top: 0.5rem;
-    }
-
-    .p-vapor {
-        display: none;
-    }
-
-    .p-agenda {
-        margin-top: 1rem;
-    }
-
-    footer {
-        padding-top: 0.5rem;
-    }
-
-    .contact-item {
-        margin-bottom: 0.4rem;
-    }
-
-    #btn_tel {
-        font-size: 1.1em;
-    }
-
-    .social_icons {
-        margin-top: 0.3rem;
-    }
-}
 
 /* ######################################### */
 /* ESTE TRECHO SERVE PARA O BANNER DO COOKIE */
 /* ######################################### */
 
 #cookie-consent-banner {
+    display: none;
     position: fixed; /* Fixa o banner na tela */
     bottom: 0px; /* Alinha na parte inferior */
     left: 0; /* Alinha à esquerda */
