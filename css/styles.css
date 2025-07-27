@@ -207,7 +207,7 @@ footer {
 #btn_tel a:link,
 #btn_tel a:visited {
     color: #FFFFFF;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    /* transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; */
     text-decoration: none; /* Garante que não haja sublinhado persistente */
     outline: none; /* Remove o contorno padrão do navegador */
     transform: scale(1.0);
@@ -217,18 +217,24 @@ footer {
 
 /* Estado ao passar o mouse por cima */
 #btn_tel a:hover {
-    transform: scale(1.1); /* Efeito ao passar o mouse */
-    color: #C8E6C9; /* Verde claro no hover */
-    opacity: 0.4;
-    text-shadow: none;
+    /* transform: scale(1.1); /* Efeito ao passar o mouse */
+    /* color: #C8E6C9; /* Verde claro no hover */
+    /* opacity: 0.4; */
+    /* text-shadow: none; */
+}
+
+/* Este estilo não será o mesmo do hover, evitando a confusão visual */
+#btn_tel a:focus {
+    /* outline: 2px solid #C8E6C9; */
+    /* outline-offset: 3px; */
+    /* border-radius: 5px; /* Deixa o outline mais bonito em ícones arredondados */
 }
 
 /* Estado no momento do clique */
 #btn_tel a:active {
     color: #545454;
     outline: none; /* Remova o outline para não sobrepor o efeito de afundar */
-
-    transform: scale(0.95); /* Efeito de "afundar" */
+    transform: scale(1.25); /* Efeito de "afundar" */
 }
 
 a[href^="mailto:"] {
@@ -253,7 +259,7 @@ a[href^="mailto:"]:hover {
 .social_icons a:visited {
     color: #FFFFFF;
     font-size: 1.8rem; /* Tamanho dos ícones */
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    /* transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; */
     text-decoration: none;
     display: inline-block;
     opacity: 1; /* Define uma opacidade inicial explícita */
@@ -261,17 +267,23 @@ a[href^="mailto:"]:hover {
 }
 
 .social_icons a:hover {
-    transform: scale(1.1); /* Efeito ao passar o mouse */
-    color: #C8E6C9; /* Verde claro no hover */
-    opacity: 0.4;
-    outline: none; /* Pode manter ou remover, já que o foco será perdido */
+    /* transform: scale(1.1); /* Efeito ao passar o mouse */
+    /* color: #C8E6C9; /* Verde claro no hover */
+    /* opacity: 0.4; */
+    /* outline: none; /* Pode manter ou remover, já que o foco será perdido */
+}
+
+/* Este estilo não será o mesmo do hover, evitando a confusão visual */
+.social_icons a:focus {
+    /* outline: 2px solid #C8E6C9; */
+    /* outline-offset: 3px; */
+    /* border-radius: 5px; /* Deixa o outline mais bonito em ícones arredondados */
 }
 
 .social_icons a:active {
     color: #545454;
     outline: none; /* Remova o outline para não sobrepor o efeito de afundar */
-
-    transform: scale(0.95); /* Efeito de "afundar" */
+    transform: scale(1.25); /* Efeito de "afundar" */
 }
 
 
