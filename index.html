@@ -6,6 +6,7 @@
     <title>A Corretora Kreitchmann</title>
     <link rel="stylesheet" href="./css/styles.css" type="text/css" />
     <link rel="icon" href="ifavicon_48x48.ico" type="image/x-icon" /> <!-- Ícone do site (ifavicon) -->
+    <link rel="shortcut icon" href="ifavicon_48x48.ico" type="image/x-icon" /> <!-- Ícone do site (ifavicon) retrocompatibilidad -->
     <!-- ####################################################################### -->
     <!-- ####################################################################### -->
     <!-- Pré-conexão com o Google Fonts para otimizar o carregamento -->
@@ -21,10 +22,14 @@
     <!-- Meta description, keywords e localização -->
     <meta
       name="description"
+      xml:lang-"pt-BR" lang="pt-BR"
       content="A Corretora Kreitchmann é uma corretora de imóveis que atua no mercado com o objetivo de oferecer as melhores oportunidades de imóveis." />
+    <meta name="title" content="A Corretora Kreitchmann">
     <meta
       name="keywords"
       content="Corretora, imóveis, Oportunidade de imóvel, Kreitchmann, Corretora de imóveis, Compra e venda de imóveis, Imóveis em Porto Alegre, Imóveis na Grande Porto Alegre, Corretora de imóveis em Porto Alegre, Corretora de imóveis na Grande Porto Alegre, Imóveis à venda, Imóveis comerciais, Imóveis residenciais, Investimento imobiliário, Consultoria imobiliária, Assessoria imobiliária, Corretagem de imóveis, Venda de imóveis, Imobiliária em Porto Alegre, Imobiliária na Grande Porto Alegre" />
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://www.kreitchmann.com.br/">
     <meta name="geo.placename" content="Porto Alegre, RS" />
     <meta name="geo.region" content="BR-RS" />
     <meta name="geo.position" content="-30.0325; -51.2304" />
@@ -40,18 +45,53 @@
     <!-- Link para Content Security Policy (CSP) -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'" />
+      content="default-src 'self';
+      script-src 'self' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com 'sha256-LFAjLlhGWOL9liwNf1wUgObMtqzJ4P0jekqGlBSFMVI=';
+      style-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+      font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+      img-src 'self' data: https://www.google-analytics.com https://ssl.google-analytics.com;
+      connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com;
+      frame-src https://www.googletagmanager.com;
+      object-src 'none';
+      form-action 'self';" />
     <!-- ####################################################################### -->
     <!-- ####################################################################### -->
     <!-- Link X-UA-Compatible: Para navegadores mais antigos (como IE) renderizem a página no modo mais seguro e compatível -->
-    <meta 
-      http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- ####################################################################### -->
+    <!-- ####################################################################### -->
+    <!-- Google Plus -->
+    <meta itemprop="name" content="A Corretora Kreitchmann">
+    <meta itemprop="description" content="A Corretora Kreitchmann é uma corretora de imóveis que atua no mercado com o objetivo de oferecer as melhores oportunidades de imóveis.">
+    <meta itemprop="url" content="https://www.kreitchmann.com.br/">
+    <!-- ####################################################################### -->
+    <!-- ####################################################################### -->
+    <!-- Início Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PP3BJQZR');
+    </script>
+     <!-- Fim Google Tag Manager -->
+    <!-- ####################################################################### -->
+    <!-- ####################################################################### -->
   </head>
   <body>
+    <!-- ####################################################################### -->
+    <!-- ####################################################################### -->
+    <!-- Início Google Tag Manager <noscript> -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PP3BJQZR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- Fim Google Tag Manager <noscript> -->
+    <!-- ####################################################################### -->
+    <!-- ####################################################################### -->
     <!-- Início do conteúdo da página -->
     <h1 class="h1_zero">Home - A Corretora Kreitchmann</h1>
     <!-- Título principal da página, oculto para leitores de tela -->
-    <section class="sect_uni" style="background-image: url('assets/img_fundo_pg_constru.webp')">
+    <section class="sect_uni">
       <div class="container">
         <header>
           <div class="div_lg">
@@ -78,6 +118,7 @@
           <div class="contact_info">
             <div class="contact-item" id="btn_tel">
               <a
+                class="social-link"
                 href="tel:51989386583"> <!-- Link para telefone -->
                 <i class="fas fa-phone"></i>
                 <span class="contact-item-span" >(51) 98938-6583</span>
@@ -99,31 +140,46 @@
           </div>
           <div class="social_icons">
             <a
+              class="social-link"
               href="https://api.whatsapp.com/send?phone=5551989386583&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informações%20sobre%20A%20Corretora%20Kreitchmann."
               target="_blank"
               aria-label="WhatsApp">
               <i class="fab fa-whatsapp"></i>
             </a>
             <a
+              class="social-link"
               href="https://www.instagram.com/vekreitchmann"
               target="_blank"
               aria-label="Instagram">
               <i class="fab fa-instagram"></i>
             </a>
             <a
+              class="social-link"
+              href="https://www.tiktok.com/@acorretorakreitchmann"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a
+              class="social-link"
               href="https://www.facebook.com/veronica.kreitchmannhollandacavalcanti/"
               target="_blank"
               aria-label="Facebook">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="#" target="_self" aria-label="YouTube">
+            <a
+              class="social-link"
+              href="https://www.youtube.com/@acorretorakreitchmann"
+              target="_blank"
+              aria-label="YouTube">
               <i class="fab fa-youtube"></i>
             </a>
           </div>
         </footer>
       </div>
     </section>
-    <div id="cookie-consent-banner" style="display: none">
+    <div id="cookie-consent-banner">
       <div class="cookie-content">
         <p>
           Este site utiliza cookies essenciais e tecnologias semelhantes para melhorar a sua experiência de navegação e oferecer conteúdo personalizado.
